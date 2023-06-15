@@ -24,7 +24,11 @@
         Select <strong>Enable OAuth Settings</strong>.
       </li>
       <li>
+        {% if site.product == 'Video Cloud Studio' %}
         Enter <code translate="No">https://studio.brightcove.com/products/videocloud/integrations/customer-data-platforms/authorization-complete</code> for the Callback URL and select the following OAuth Scopes:
+        {% elseif site.product == 'Brightcove Audience Insights' %}
+        Enter <code translate="No">https://insights.wicketlabs.com/authorization-complete</code> for the Callback URL and select the following OAuth Scopes:
+        {% endif %}
         <ul>
           <li>Manage user data via APIs (api)</li>
           <li>Perform requests at any time (refresh_token, offline_access)</li>
